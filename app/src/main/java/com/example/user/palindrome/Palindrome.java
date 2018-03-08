@@ -38,12 +38,17 @@ public class Palindrome extends AppCompatActivity {
             if(str.length() > 4){
                 char leer = ' ';
                 //Überprüfe ob es ein Leerzeichen enthält
-                if (str.indexOf(leer)==0){
+                if (str.indexOf(leer)== 0){
                     //überprüfe ob palindrome
+                    if (){
+
+                        ausgabe_ispal.setText("Es IST ein Palindrom");
+                    }
+                    else ausgabe_nopal.setText("Es ist kein Palindrom");
                 }
-                else {ausgabe_space.setText("ohne leerzeichen");}
+                else ausgabe_space.setText("Wort ohne leerzeichen");
             }
-            else{ausgabe_wordlength.setText(">=4");}
+            else ausgabe_wordlength.setText("Wort muss mindestens 5 Buchstaben haben");
 
         }
 
