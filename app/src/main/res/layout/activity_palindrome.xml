@@ -4,81 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/holo_green_light"
     tools:context="com.example.user.palindrome.Palindrome">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="175dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="16dp"
-        android:text="Überprüfe Eingabe"
+        android:layout_width="289dp"
+        android:layout_height="116dp"
+        android:layout_marginTop="50dp"
+        android:text="Überprüfung, ob die Eingabe ein Palindrom ist:"
+        android:textAppearance="@style/TextAppearance.AppCompat"
         android:textColorLink="@color/colorPrimary"
-        android:textSize="20sp"
+        android:textSize="30sp"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/ausgabe_ispal"
-        android:layout_width="180dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="8dp"
+        android:id="@+id/ausgabe"
+        android:layout_width="313dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="50dp"
         android:text=""
+        android:textAlignment="@android:integer/config_mediumAnimTime"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/holo_red_dark"
         android:textColorLink="@color/colorPrimary"
-        android:textSize="20sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ausgabe_nopal" />
-
-    <TextView
-        android:id="@+id/ausgabe_nopal"
-        android:layout_width="180dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="8dp"
-        android:text="Is NO Palindrome"
-        android:textColorLink="@color/colorPrimary"
-        android:textSize="20sp"
-        android:visibility="invisible"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ausgabe_space" />
-
-    <TextView
-        android:id="@+id/ausgabe_wordlength"
-        android:layout_width="180dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:text="Word need more than 5 letters"
-        android:textColorLink="@color/colorPrimary"
-        android:textSize="20sp"
-        android:visibility="invisible"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/check" />
 
-    <TextView
-        android:id="@+id/ausgabe_space"
-        android:layout_width="180dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="8dp"
-        android:text="No space in word"
-        android:textColorLink="@color/colorPrimary"
-        android:textSize="20sp"
-        android:visibility="invisible"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ausgabe_wordlength" />
-
     <EditText
         android:id="@+id/palindrome_in"
-        android:layout_width="215dp"
-        android:layout_height="wrap_content"
+        android:layout_width="280dp"
+        android:layout_height="99dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="Word >= 5"
+        android:hint="Wort >= 5 Buchstaben"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
@@ -87,14 +52,28 @@
 
     <Button
         android:id="@+id/check"
-        android:layout_width="88dp"
+        android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:text="Check"
+        android:background="@android:color/background_dark"
+        android:text="Eingabe   überprüfen"
+        android:textColor="@android:color/background_light"
+        android:textColorLink="@android:color/background_dark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/palindrome_in" />
+
+    <TextView
+        android:id="@+id/hinweis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="20dp"
+        android:text="Hinweis:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ausgabe" />
 
 </android.support.constraint.ConstraintLayout>

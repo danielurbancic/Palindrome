@@ -11,10 +11,8 @@ public class Palindrome extends AppCompatActivity {
 
     EditText palindrome_in;
     Button button;
-    TextView ausgabe_ispal;
-    TextView ausgabe_nopal;
-    TextView ausgabe_space;
-    TextView ausgabe_wordlength;
+    TextView ausgabe;
+
 
 
     @Override
@@ -24,10 +22,8 @@ public class Palindrome extends AppCompatActivity {
 
         palindrome_in = (EditText) findViewById(R.id.palindrome_in);
         button = (Button) findViewById(R.id.check);
-        ausgabe_ispal = (TextView) findViewById(R.id.ausgabe_ispal);
-        ausgabe_nopal = (TextView) findViewById(R.id.ausgabe_nopal);
-        ausgabe_space = (TextView) findViewById(R.id.ausgabe_space);
-        ausgabe_wordlength = (TextView) findViewById(R.id.ausgabe_wordlength);
+        ausgabe = (TextView) findViewById(R.id.ausgabe);
+
 
 
         Button check = /*(Button)*/ findViewById(R.id.check);
@@ -46,16 +42,16 @@ public class Palindrome extends AppCompatActivity {
                         //überprüfe ob palindrome
                         if (b == true) {
 
-                            ausgabe_ispal.setText("Es IST ein Palindrom");
-                            ausgabe_ispal.setVisibility(View.VISIBLE);
+                            ausgabe.setText("Eingabe ist ein Palindrom");
+                            //ausgabe_ispal.setVisibility(View.VISIBLE);
                         } else {
-                            ausgabe_nopal.setText("Es ist kein Palindrom");
+                            ausgabe.setText("Eingabe ist KEIN Palindrom");
                         }
                     } else {
-                        ausgabe_space.setText("Wort ohne Leerzeichen");
+                        ausgabe.setText("Eingabe OHNE Lehrzeichen");
                     }
                 } else{
-                    ausgabe_wordlength.setText("Wort muss mindestens 5 Buchstaben haben");
+                    ausgabe.setText("Wortlänge mindestens 5 Buchstaben");
                 }
 
             }
