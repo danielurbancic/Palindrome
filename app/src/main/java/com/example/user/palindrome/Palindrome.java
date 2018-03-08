@@ -27,16 +27,26 @@ public class Palindrome extends AppCompatActivity {
         ausgabe_nopal = (EditText) findViewById(R.id.ausgabe_nopal);
         ausgabe_space = (EditText) findViewById(R.id.ausgabe_space);
         ausgabe_wordlength = (EditText) findViewById(R.id.ausgabe_wordlength);
-        
+
 
     }
     Button check = (Button) findViewById(R.id.check);
-    check.setOnClickListener(new View.OnClickListener){
+    check.setOnClickListener (new View.OnClickListener(){
         @Override
-                public void onClick (View view){
+            public void onClick (View view){
+            String str = palindrome_in.getText().toString();
+            if(str.length() > 4){
+                char leer = ' ';
+                //Überprüfe ob es ein Leerzeichen enthält
+                if (str.indexOf(leer)==0){
+                    //überprüfe ob palindrome
+                }
+                else {ausgabe_space.setText("ohne leerzeichen");}
+            }
+            else{ausgabe_wordlength.setText(">=4");}
 
         }
 
-    }
+    });
 
 }
