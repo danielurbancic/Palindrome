@@ -23,32 +23,40 @@ public class Palindrome extends AppCompatActivity {
         setContentView(R.layout.activity_palindrome);
 
         palindrome_in = (EditText) findViewById(R.id.palindrome_in);
-        button = (Button) findViewById(R.id.button);
+        button = (Button) findViewById(R.id.check);
         ausgabe_ispal = (TextView) findViewById(R.id.ausgabe_ispal);
         ausgabe_nopal = (TextView) findViewById(R.id.ausgabe_nopal);
         ausgabe_space = (TextView) findViewById(R.id.ausgabe_space);
         ausgabe_wordlength = (TextView) findViewById(R.id.ausgabe_wordlength);
 
 
-        Button check = (Button) findViewById(R.id.check);
+        Button check = /*(Button)*/ findViewById(R.id.check);
         check.setOnClickListener(new View.OnClickListener() {
+
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 String str = palindrome_in.getText().toString();
 
                 if (str.length() > 4) {
                     char leer = ' ';
                     //Überprüfe ob es ein Leerzeichen enthält
-                    if (str.indexOf(leer) == 0) {
+                    if (!str.contains(" ")) {
 
                         boolean b = isPalindrome(str);
                         //überprüfe ob palindrome
                         if (b == true) {
 
                             ausgabe_ispal.setText("Es IST ein Palindrom");
-                        } else ausgabe_nopal.setText("Es ist kein Palindrom");
-                    } else ausgabe_space.setText("Wort ohne leerzeichen");
-                } else ausgabe_wordlength.setText("Wort muss mindestens 5 Buchstaben haben");
+                            ausgabe_ispal.setVisibility(View.VISIBLE);
+                        } else {
+                            ausgabe_nopal.setText("Es ist kein Palindrom");
+                        }
+                    } else {
+                        ausgabe_space.setText("Wort ohne Leerzeichen");
+                    }
+                } else{
+                    ausgabe_wordlength.setText("Wort muss mindestens 5 Buchstaben haben");
+                }
 
             }
 
