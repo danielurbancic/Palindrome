@@ -34,14 +34,17 @@ public class Palindrome extends AppCompatActivity {
     Button check = (Button) findViewById(R.id.check);
     check.setOnClickListener (new View.OnClickListener(){
         @Override
-            public void onClick (View view){
+            public void onClick(View view){
             String str = palindrome_in.getText().toString();
+
             if(str.length() > 4){
                 char leer = ' ';
                 //Überprüfe ob es ein Leerzeichen enthält
                 if (str.indexOf(leer)== 0){
+
+                    boolean b = isPalindrome(str);
                     //überprüfe ob palindrome
-                    if (){
+                    if (b == true){
 
                         ausgabe_ispal.setText("Es IST ein Palindrom");
                     }
@@ -54,5 +57,7 @@ public class Palindrome extends AppCompatActivity {
         }
 
     });
-
+    public static boolean isPalindrome(String str) {
+        return str.equals(new StringBuilder(str).reverse().toString());
+    }
 }
