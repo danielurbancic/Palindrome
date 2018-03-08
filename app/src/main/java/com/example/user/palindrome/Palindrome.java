@@ -30,33 +30,31 @@ public class Palindrome extends AppCompatActivity {
         ausgabe_wordlength = (TextView) findViewById(R.id.ausgabe_wordlength);
 
 
-    }
-    Button check = (Button) findViewById(R.id.check);
-    check.setOnClickListener (new View.OnClickListener(){
-        @Override
-            public void onClick(View view){
-            String str = palindrome_in.getText().toString();
+        Button check = (Button) findViewById(R.id.check);
+        check.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String str = palindrome_in.getText().toString();
 
-            if(str.length() > 4){
-                char leer = ' ';
-                //Überprüfe ob es ein Leerzeichen enthält
-                if (str.indexOf(leer)== 0){
+                if (str.length() > 4) {
+                    char leer = ' ';
+                    //Überprüfe ob es ein Leerzeichen enthält
+                    if (str.indexOf(leer) == 0) {
 
-                    boolean b = isPalindrome(str);
-                    //überprüfe ob palindrome
-                    if (b == true){
+                        boolean b = isPalindrome(str);
+                        //überprüfe ob palindrome
+                        if (b == true) {
 
-                        ausgabe_ispal.setText("Es IST ein Palindrom");
-                    }
-                    else ausgabe_nopal.setText("Es ist kein Palindrom");
-                }
-                else ausgabe_space.setText("Wort ohne leerzeichen");
+                            ausgabe_ispal.setText("Es IST ein Palindrom");
+                        } else ausgabe_nopal.setText("Es ist kein Palindrom");
+                    } else ausgabe_space.setText("Wort ohne leerzeichen");
+                } else ausgabe_wordlength.setText("Wort muss mindestens 5 Buchstaben haben");
+
             }
-            else ausgabe_wordlength.setText("Wort muss mindestens 5 Buchstaben haben");
 
-        }
+        });
+    }
 
-    });
     public static boolean isPalindrome(String str) {
         return str.equals(new StringBuilder(str).reverse().toString());
     }
